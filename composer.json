@@ -1,0 +1,10 @@
+{
+    "name": "johnstoncode/johnstoncode",
+    "authors": [
+        {
+            "name": "Chris Johnston",
+            "email": "chris@johnstoncode.com"
+        }
+    ],
+    "require": {}
+}
