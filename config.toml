@@ -13,7 +13,7 @@ theme = "hermit"
   themeColor = "#494f5c"
 
   homeSubtitle = "Sheffield based software developer"
-  footerCopyright = 'test'
+  footerCopyright = ''
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]]
