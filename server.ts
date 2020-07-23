@@ -13,4 +13,4 @@ app.use(router.allowedMethods());
 
 app.use(notFound);
 
-await app.listen({ port: 8000 });
+await app.listen({ port: 3000 });
