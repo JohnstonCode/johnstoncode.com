@@ -7,7 +7,7 @@ After=network.target
 Type=simple
 User=chris
 WorkingDirectory=/var/www/johnstoncode
-ExecStart=/home/chris/.deno/bin/deno run --allow-net server.ts
+ExecStart=/home/chris/.deno/bin/deno run --allow-net --allow-read server.ts
 Restart=on-failure
 
 [Install]
