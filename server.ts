@@ -1,4 +1,4 @@
-import { Application, Status, Context } from "https://deno.land/x/oak/mod.ts";
+import { Application, Status, Context, send } from "https://deno.land/x/oak/mod.ts";
 import { router } from './routes/routes.ts';
 
 const app = new Application();
@@ -10,6 +10,16 @@ function notFound(context: Context) {
 
 app.use(router.routes());
 app.use(router.allowedMethods());
+
+app.use(async (context, next) => {
+  try {
+    await send(context, context.request.url.pathname, {
+      root: `${Deno.cwd()}/public`
+    });
+  } catch (err) {
+    await next();
+  }
+});
 
 app.use(notFound);
 
