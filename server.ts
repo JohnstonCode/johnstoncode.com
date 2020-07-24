@@ -13,4 +13,8 @@ app.use(router.allowedMethods());
 
 app.use(notFound);
 
-await app.listen({ port: 3000 });
+app.addEventListener("listen", ({ hostname, port }) => {
+  console.log(`Listening at: http://${hostname}:${port}`);
+});
+
+await app.listen({ hostname: "localhost", port: 3000 });
