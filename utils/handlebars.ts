@@ -1,3 +1,3 @@
-import { Handlebars } from 'https://deno.land/x/handlebars/mod.ts';
+import { Handlebars } from '../deps.ts';
 
 export const handle = new Handlebars();

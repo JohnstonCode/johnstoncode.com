@@ -1,4 +1,4 @@
-import { Application, Status, Context, send } from "https://deno.land/x/oak/mod.ts";
+import { Application, Status, Context, send } from "./deps.ts";
 import { router } from './routes/routes.ts';
 
 const app = new Application();
