@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ssh -t chris@johnstoncode.com 'cd /var/www/johnstoncode && git pull && sudo systemctl restart johnstoncode'
