@@ -1,12 +1,13 @@
 <?php
 namespace Deployer;
 
-require 'recipe/symfony.php';
+require 'recipe/symfony4.php';
 require 'recipe/rsync.php';
 
 // Project name
 set('application', 'johnstoncode');
 set('ssh_multiplexing', true);
+set('writable_mode', 'chmod');
 
 set('rsync_src', function () {
     return __DIR__;
@@ -21,20 +22,21 @@ add('rsync', [
         '.gitignore',
         'deploy.php',
         'docker-compose.yml',
-        'Dockerfile'
+        'Dockerfile',
+        '/var/'
     ]
 ]);
 
 // Set up a deployer task to copy secrets to the server. 
 // Grabs the dotenv file from the github secret
 task('deploy:secrets', function () {
-    file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
+    file_put_contents(__DIR__ . '/.env.local', getenv('DOT_ENV'));
     upload('.env.local', get('deploy_path') . '/shared');
 });
 
-test('prod_env', function () {
-    run('{{bin/composer}} dump-env prod');
-});
+// task('prod_env', function () {
+//     run('{{bin/composer}} dump-env prod');
+// });
 
 // Shared files/dirs between deploys 
 add('shared_files', []);
@@ -46,9 +48,7 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('johnstoncode.com')
-    ->hostname('johnstoncode.com')
-    ->stage('production')
+host('68.183.43.37')
     ->user('deploy')
     ->set('deploy_path', '/var/www/{{application}}');    
     
@@ -79,7 +79,7 @@ task('deploy', [
     'deploy:cache:clear',
     'deploy:cache:warmup',
     'deploy:symlink',
-    'prod_env',
+    // 'prod_env',
     'deploy:unlock',
     'cleanup',
 ]);
