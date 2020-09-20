@@ -16,6 +16,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "deployer/deployer": "^6.8"
     },
     "config": {
         "optimize-autoloader": true,

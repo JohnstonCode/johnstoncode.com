@@ -1,4 +1,10 @@
 {
+    "deployer/deployer": {
+        "version": "v6.8.0"
+    },
+    "deployer/phar-update": {
+        "version": "v2.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -16,6 +22,9 @@
     },
     "php": {
         "version": "7.4"
+    },
+    "pimple/pimple": {
+        "version": "v3.3.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -125,6 +134,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.18.1"
+    },
+    "symfony/process": {
+        "version": "v5.1.5"
     },
     "symfony/routing": {
         "version": "5.1",
