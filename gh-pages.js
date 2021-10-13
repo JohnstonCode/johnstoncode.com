@@ -4,7 +4,7 @@ publish(
 	'build',
 	{
 		branch: 'gh-pages',
-		repo: 'git@github.com:JohnstonCode/johnstoncode.git',
+		repo: 'git@github.com:JohnstonCode/johnstoncode.com.git',
 		user: {
 			name: 'Chris Johnston',
 			email: 'chris@johnstoncode.com'
